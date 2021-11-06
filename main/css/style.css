@@ -1,0 +1,703 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Railway-regular";
+}
+/* fonts */
+@font-face {
+  font-family: "Railway-regular";
+  src: url(../fonts/Raleway-Regular.ttf);
+}
+@font-face {
+  font-family: "Railway-medium";
+  src: url(../fonts/Raleway-Medium.ttf);
+}
+@font-face {
+  font-family: "Railway-bold";
+  src: url(../fonts/Raleway-Bold.ttf);
+}
+@font-face {
+  font-family: "Railway-semibold";
+  src: url(../fonts/Raleway-SemiBold.ttf);
+}
+@font-face {
+  font-family: "Railway-black";
+  src: url(../fonts/Raleway-Black.ttf);
+}
+@font-face {
+  font-family: "Railway-extrabold";
+  src: url(../fonts/Raleway-ExtraBold.ttf);
+}
+
+/* colors */
+
+:root {
+  --primary: #eebf00;
+  --secondary: #232b38;
+  --ternary: #6c6c6c;
+  --danger: #fe4545;
+  --pure: #fefefe;
+  --light: #f0f0f0;
+  --heaven: #ffffff;
+  --footer: #2d333f;
+}
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+/* common flex css */
+.flex {
+  display: flex;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+/* media query */
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1152px;
+  }
+}
+
+header.topbar {
+  background: var(--secondary);
+  color: var(--pure);
+  font-family: "Railway-semibold";
+  padding: 0.75rem 0;
+}
+header.topbar .icons a {
+  margin-right: 0.6rem;
+}
+
+header.topbar .auth > div a {
+  color: var(--pure);
+  text-decoration: none;
+}
+header.topbar .auth .divider {
+  padding: 0 1rem;
+}
+header.topbar .auth > div img {
+  margin-right: 0.35rem;
+}
+
+nav .top .contact h5,
+nav .top .time h5 {
+  font-family: "Railway-black";
+  margin-bottom: 0.25rem;
+}
+nav .top {
+  padding: 1.5rem 0;
+}
+nav .top .contact h6,
+nav .top .time h6 {
+  font-family: "Railway-medium";
+  letter-spacing: 0.055rem;
+  font-size: 0.75rem;
+  color: var(--ternary);
+}
+nav .top .contact img,
+nav .top .time img {
+  margin-right: 1rem;
+}
+
+nav .navbar a {
+  text-decoration: none;
+  color: var(--secondary);
+  font-family: "Railway-semibold";
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+nav .navbar a.active {
+  background: var(--primary);
+  color: var(--pure);
+}
+nav .navbar a:hover {
+  background: var(--primary);
+  color: var(--pure);
+}
+/* magic_shawdow larger */
+.magic-shadow {
+  position: relative;
+  background: var(--heaven);
+}
+.magic-shadow::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 69px;
+  background-image: url(../icons/shadow.svg);
+  bottom: -22px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
+/* magic shadow small */
+.magic-shadow-sm {
+  position: relative;
+  background: var(--heaven);
+}
+.magic-shadow-sm:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 69px;
+  background-image: url(../icons/shadow-sm.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: -31px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+header.hero {
+  height: 600px;
+  background-image: url(../images/hero.png);
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+header.hero .container {
+  position: relative;
+}
+header.hero .welcome span {
+  font-family: "Railway-bold";
+  color: var(--secondary);
+  margin-right: 0.75rem;
+}
+header.hero .welcome {
+  margin-bottom: 0.25rem;
+}
+header.hero h1 {
+  font-family: "Railway-extrabold";
+  color: var(--secondary);
+  font-family: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+header.hero h1 span {
+  color: var(--primary);
+}
+header.hero p {
+  font-family: "Railway-medium";
+  width: 50%;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.btn {
+  padding: 0.75rem 0.75rem;
+  border-radius: 4px;
+  border: none;
+  line-height: 0.8;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--heaven);
+}
+.btn-primary:hover {
+  background: var(--heaven);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--heaven);
+}
+.btn-secondary:hover {
+  background: var(--heaven);
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+}
+.header.hero button:first-child {
+  margin-right: 0.5rem;
+}
+header.hero .hero-img {
+  position: absolute;
+  top: -40px;
+  right: 40px;
+}
+
+section {
+  padding: 4rem 0;
+}
+section.top-products {
+  background: var(--light);
+}
+.section-heading {
+  font-family: "Railway-bold";
+  text-align: center;
+  position: relative;
+  margin-bottom: 6rem;
+}
+.section-heading::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  background-image: url(../icons/hr.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: -40px;
+}
+section.top-products .food-slider .food-card {
+  background: var(--heaven);
+  padding: 1.5rem 0;
+  border: 4px;
+}
+section.top-products .food-slider .food-card .product-img img {
+  width: 80%;
+  height: 200px;
+  object-fit: contain;
+}
+hr {
+  border: 1px solid var(--light);
+  opacity: 0.8;
+  margin: 1rem 0;
+}
+section.top-products .food-slider .food-card h2 {
+  font-family: "Railway-bold";
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+}
+.text-center {
+  text-align: center;
+}
+section.top-products .food-slider .food-card .stars img {
+  margin-right: 0.25rem;
+}
+section.top-products .food-slider .food-card .price {
+  font-family: "Railway-medium";
+  color: var(--danger);
+  margin-bottom: 1rem;
+}
+section.top-products .food-slider .food-card button {
+  font-family: "Railway-medium";
+  color: var(--secondary);
+  background: var(--heaven);
+  border: 2px solid var(--primary);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  transform: all 0.3s ease;
+}
+section.top-products .food-slider .food-card button img {
+  background: var(--primary);
+  padding: 0.5rem;
+  height: 32px;
+  margin-right: 1.2rem;
+}
+section.top-products .food-slider .food-card button:hover {
+  background: var(--primary);
+  color: var(--heaven);
+}
+.slick-slide {
+  margin: 0 27px;
+}
+.slick-list {
+  margin: 0 -27px;
+}
+
+.top-products .slider-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: var(--primary);
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+.top-products .slider {
+  position: relative;
+}
+.pre-btn {
+  position: absolute;
+  top: 46%;
+  left: -3rem;
+  z-index: 1;
+}
+.next-btn {
+  position: absolute;
+  top: 46%;
+  right: -3rem;
+  z-index: 1;
+}
+.top-products .btn {
+  margin-top: 2rem;
+}
+.slick-track {
+  padding: 1rem 0;
+}
+.slick-dots {
+  display: flex;
+  justify-content: center;
+}
+
+.slick-dots li {
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 30px;
+}
+ul.slick-dots {
+  margin-right: -46px;
+}
+.slick-dots li button {
+  display: none;
+}
+.slick-dots .slick-active {
+  color: var(--primary);
+}
+section.about-meal img {
+  width: 85%;
+}
+.flex-1 {
+  flex: 1;
+}
+.flex-direction {
+  flex-direction: column;
+}
+section.about-meal h2 {
+  font-family: "Railway-bold";
+  font-size: 1.4rem;
+  color: var(--secondary);
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+section.about-meal p {
+  line-height: 1.7;
+  margin-bottom: 4rem;
+}
+section.service {
+  background: var(--light);
+  position: relative;
+  z-index: 0;
+}
+section.service .service-card {
+  background: var(--heaven);
+  text-align: center;
+  padding: 2rem;
+  padding-top: 4rem;
+  position: relative;
+  border-radius: 4px;
+  margin-right: 2rem;
+}
+section.service .service-card img {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+section.service .service-card h2 {
+  font-family: "Railway-bold";
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+section.service .service-card p {
+  line-height: 1.6rem;
+  margin-bottom: 1rem;
+}
+section.service .card-wrapper {
+  display: flex;
+  margin-right: -2rem;
+  margin-top: 8rem;
+}
+section.big-deals .container .time-wrapper div {
+  background: var(--primary);
+  margin-right: 2rem;
+  width: 150px;
+  height: 150px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+section.big-deals .container .time-wrapper div:last-child {
+  margin-right: 0;
+}
+section.big-deals .container .time-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.big-deals .container .time-wrapper div span:first-child {
+  font-family: "Railway-bold";
+  font-size: 2.5rem;
+  color: var(--heaven);
+  margin-bottom: 0.5rem;
+}
+section.big-deals .container .time-wrapper div span:last-child {
+  font-family: "Railway-midium";
+  color: var(--heaven);
+  margin-bottom: 0.5rem;
+}
+section.big-deals {
+  background: linear-gradient(rgba(35, 43, 56, 0.9), rgba(35, 43, 56, 0.9)),
+    url(../images/food-table.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+.text-pure {
+  color: var(--pure);
+}
+
+section.lastest-news .container .latest-card-wrapper .card img {
+  width: 100%;
+}
+section.lastest-news
+  .container
+  .latest-card-wrapper
+  .card
+  .info-content
+  span:last-child {
+  font-weight: bold;
+  padding: 0 10px;
+}
+section.lastest-news .container .latest-card-wrapper .card {
+  margin-right: 2rem;
+  position: relative;
+  z-index: 0;
+}
+section.lastest-news .container .latest-card-wrapper {
+  margin-right: -2rem;
+}
+section.lastest-news .container .latest-card-wrapper .card .info-content .date {
+  margin-bottom: 15px;
+}
+section.lastest-news .container .card .content-description h2 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+section.lastest-news .container .card .content-description p {
+  line-height: 1.5rem;
+}
+section.lastest-news {
+  background: var(--light);
+}
+section.lastest-news .container .card .content-description {
+  background: var(--heaven);
+  padding: 2rem;
+  border-radius: 2px;
+}
+section.lastest-news .container button {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+section.subscriber {
+  background: var(--primary);
+}
+section.subscriber .subscriber-div h1 {
+  font-family: "Railway-bold";
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+section.subscriber .subscriber-div p {
+  font-family: "Railway-medium";
+  font-size: 1rem;
+  margin-bottom: 1.5 rem;
+  line-height: 1.5rem;
+}
+section.subscriber .subscriber-div .input-wrap {
+  background: var(--light);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem;
+  border-radius: 2px;
+  margin: 1.5rem 0rem;
+}
+section.subscriber .subscriber-div .input-wrap input[type="text"] {
+  width: 100%;
+  padding: 0 0.3rem;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  background: #f0f0f0;
+}
+section.subscriber .subscriber-div .input-wrap .btn {
+  width: 170px;
+}
+section.subscriber .subscriber-div .input-wrap .btn:hover {
+  background: var(--secondary);
+  color: var(--light);
+}
+section.contact-us .contact-info-wrapper {
+  padding: 4rem 0;
+  flex: 1;
+}
+section.contact-us .map {
+  flex: 1;
+}
+section.contact-us {
+  padding: 0;
+}
+section.contact-us .contact-info {
+  display: flex;
+  justify-content: center;
+}
+section.contact-us .contact-info > div > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+section.contact-us .contact-info > div > div img {
+  margin-right: 2rem;
+}
+section.contact-us .contact-info > div > div > div {
+  display: flex;
+  flex-direction: column;
+}
+section.contact-us .contact-info > div > div > div span:first-child {
+  font-family: "Railway-semibold";
+}
+section.contact-us .map {
+  filter: grayscale(100%);
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+footer {
+  background-color: var(--secondary);
+  padding-bottom: 4rem;
+}
+.footer-heading {
+  border-bottom: 1px solid var(--primary);
+  text-align: center;
+  color: white;
+  padding-top: 4rem;
+  padding-bottom: 1.3rem;
+}
+footer .container .f-about > div {
+  text-align: center;
+  color: white;
+}
+footer .container .f-about > div p {
+  margin: 1.3rem 0;
+}
+footer .container .f-quick-links > div a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  text-align: center;
+  margin: 1.3rem 0;
+  cursor: pointer;
+}
+
+footer .container .f-follow .follow-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1.3rem;
+}
+footer .container .f-follow .follow-wrapper > div > div {
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+footer .container .f-follow .follow-wrapper > div > div img {
+  margin-right: 1.3rem;
+}
+footer .container > div {
+  margin-right: 2rem;
+}
+footer .container > div:last-child {
+  margin-right: -2rem;
+}
+
+footer.last-title {
+  background-color: #2d333f;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.7rem;
+}
+footer.last-title p span {
+  color: var(--primary);
+}
+
+/* responsive code */
+
+.main-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.nav-trigger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 15px;
+}
+.nav-background {
+  width: 100%;
+  height: 100%;
+  background: var(--light);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  z-index: 1;
+}
